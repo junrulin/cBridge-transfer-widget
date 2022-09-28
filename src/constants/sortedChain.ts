@@ -8,7 +8,6 @@
 // > Moonriver 1285
 // > Celo 44787
 // > Aurora 1313161554
-// > Harmony
 // > Optimism 10
 // > Boba 288
 // > OKXChain 66
@@ -27,7 +26,6 @@ const sortedChainNames = [
   "Oasis",
   "Evmos",
   "Aurora",
-  "Harmony",
   "Moonbeam",
   "Moonriver",
   "Optimism",

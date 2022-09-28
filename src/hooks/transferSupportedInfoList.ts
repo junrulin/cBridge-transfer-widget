@@ -88,7 +88,10 @@ export const useTransferSupportedChainList = (useAsDestinationChain: boolean): C
           peggedPairConfig.org_chain_id === fromChain.id &&
           fromChainTokenSymbolWhiteList.includes(peggedPairConfig.org_token.token.symbol)
         ) {
-          const peggedChainTokenSymbolWhiteList = getNetworkById(peggedPairConfig.pegged_chain_id).tokenSymbolList;
+          const peggedChainTokenSymbolWhiteList = getNetworkById(peggedPairConfig.pegged_chain_id)?.tokenSymbolList;
+          if(!peggedChainTokenSymbolWhiteList) {
+            return;
+          }
           if (peggedChainTokenSymbolWhiteList.includes(peggedPairConfig.pegged_token.token.symbol)) {
             potentialTargetChainIds.add(peggedPairConfig.pegged_chain_id);
           }
