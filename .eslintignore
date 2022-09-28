@@ -3,3 +3,5 @@ build/
 node_modules/
 src/proto/
 src/proto-grpc/
+
+src/components/BreweryHeader

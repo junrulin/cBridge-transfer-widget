@@ -66,6 +66,7 @@
     "react-script": "^2.0.5",
     "react-use": "^17.2.1",
     "redux-persist": "^6.0.0",
+    "sass": "^1.55.0",
     "ts-protoc-gen": "^0.15.1-pre.a71b34e"
   },
   "devDependencies": {

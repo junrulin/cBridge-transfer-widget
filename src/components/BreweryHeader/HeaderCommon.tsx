@@ -218,7 +218,7 @@ export default function Header(props: { injected, isMobile }) {
                   position: "fixed",
                   right: "0",
                   textIndent: "1em",
-                  zIndex: "100",
+                  zIndex: 100,
                 }}
               >
                 {menu}
