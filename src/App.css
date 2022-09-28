@@ -1,3 +1,14 @@
+#root {
+  min-width: 1220px;
+}
+
+@media (max-width:769px) {
+  #root {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 .App {
   text-align: center;
 }

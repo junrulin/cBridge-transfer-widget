@@ -3,14 +3,14 @@ import { Layout, message } from "antd";
 import { createUseStyles } from "react-jss";
 import { useAsync } from "react-use";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
-import { GithubFilled, TwitterCircleFilled } from "@ant-design/icons";
+// import { GithubFilled, TwitterCircleFilled } from "@ant-design/icons";
 // import Vconsole from "vconsole";
-import { DiscordCircleFilled, TelegramCircleFilled } from "../icons";
-import docIcon from "../images/doc.svg";
+// import { DiscordCircleFilled, TelegramCircleFilled } from "../icons";
+// import docIcon from "../images/doc.svg";
 import { Theme } from "../theme";
 import Transfer from "./Transfer";
 import HistoryModal from "./HistoryModal";
-import Header from "../components/Header";
+import Header from "../components/WeswapHeader";
 import { useAppDispatch, useAppSelector } from "../redux/store";
 import { closeModal, ModalName, openModal } from "../redux/modalSlice";
 import ProviderModal from "../components/ProviderModal";
@@ -102,7 +102,6 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
   },
   layout: {
     background: props => (props.isMobile ? theme.secondBackground : theme.globalBg),
-    padding: props => (props.isMobile ? 0 : "0 30px"),
     minHeight: props => (props.isMobile ? 0 : "100vh"),
     maxWidth: "100%",
     "@global": {
@@ -110,7 +109,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
         backgroundColor: "yellow",
       },
       ".ant-card": {
-        //   background: theme.surface,
+          background: theme.surface,
       },
       ".ant-dropdown": {
         backgroundColor: "yellow",
@@ -182,6 +181,12 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     fontSize: 12,
     width: "100%",
   },
+  footLabel: {
+    fontSize: '18px',
+    "&:hover": {
+      color: theme.primaryFont,
+    }
+  },
   footBy: {
     display: "inline-block",
   },
@@ -202,7 +207,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     position: "relative",
   },
   footerText: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: 400,
     color: theme.secondBrand,
   },
@@ -224,10 +229,10 @@ function FooterContent() {
     <div className={classes.footerContainer}>
       <div className={classes.footerText}>Powered by Celer Network</div>
       <div className={classes.social}>
-        <HomeCircleFilled onClick={() => window.open("https://www.celer.network", "_blank")} />
+        {/* <HomeCircleFilled onClick={() => window.open("https://www.celer.network", "_blank")} /> */}
 
         {/* eslint-disable-next-line */}
-        <img
+        {/* <img
           alt="cBridgeDocIcon"
           style={{ cursor: "pointer" }}
           src={docIcon}
@@ -236,24 +241,25 @@ function FooterContent() {
         <DiscordCircleFilled onClick={() => window.open("https://discord.gg/uGx4fjQ", "_blank")} />
         <TelegramCircleFilled onClick={() => window.open("https://t.me/celernetwork", "_blank")} />
         <TwitterCircleFilled onClick={() => window.open("https://twitter.com/CelerNetwork", "_blank")} />
-        <GithubFilled onClick={() => window.open("https://github.com/celer-network", "_blank")} />
+        <GithubFilled onClick={() => window.open("https://github.com/celer-network", "_blank")} /> */}
       </div>
       <div className={classes.footerContainerEnd}>
         {/* eslint-disable-next-line */}
-        <label style={{ cursor: "pointer" }} onClick={() => window.open("https://form.typeform.com/to/Q4LMjUaK")}>
+        <label className={classes.footLabel} style={{ cursor: "pointer" }} onClick={() => window.open("https://form.typeform.com/to/Q4LMjUaK")}>
           Contact Support
         </label>
         {/* eslint-disable-next-line */}
         <label
+          className={classes.footLabel}
           style={{ marginLeft: 24, cursor: "pointer" }}
           onClick={() => window.open("https://get.celer.app/cbridge-v2-doc/tos-cbridge-2.pdf")}
         >
           Terms of Service
         </label>
         {/* eslint-disable-next-line */}
-        <label style={{ marginLeft: 24, cursor: "pointer" }} onClick={() => window.open(PRE_UPGRADE_LINK)}>
+        {/* <label style={{ marginLeft: 24, cursor: "pointer" }} onClick={() => window.open(PRE_UPGRADE_LINK)}>
           Migrate Liquidity from Pre-upgrade Pools
-        </label>
+        </label> */}
       </div>
     </div>
   );

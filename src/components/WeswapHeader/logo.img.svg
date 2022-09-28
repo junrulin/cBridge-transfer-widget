@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="26px" viewBox="0 0 56 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo@2x</title>
+    <defs>
+        <linearGradient x1="0%" y1="62.5687649%" x2="39.9987847%" y2="41.6701374%" id="linearGradient-1">
+            <stop stop-color="#4E6AFF" offset="0%"></stop>
+            <stop stop-color="#9D98FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="40.5151924%" x2="100%" y2="74.6962458%" id="linearGradient-2">
+            <stop stop-color="#774EFF" offset="0%"></stop>
+            <stop stop-color="#6C81FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M34.8162415,16.9232588 C35.3141407,16.9232588 35.8077544,16.9049104 36.2964433,16.8688529 C32.7148503,22.0159522 26.7551177,25.3847973 20.0085491,25.3847973 C9.05578668,25.3847973 0.176818379,16.505829 0.176818379,5.55306651 C0.176818379,3.62544531 0.451834755,1.76205763 0.964770974,1.59872116e-14 L15.196333,0.000397660238 C16.6035302,9.57415637 24.8516484,16.9232588 34.8162415,16.9232588 Z" id="path-3"></path>
+        <path d="M34.6394231,16.923461 C35.1373223,16.923461 35.630936,16.9051126 36.119625,16.8690551 C32.5380319,22.0161544 26.5782993,25.3849995 19.8317308,25.3849995 C8.8789683,25.3849995 0,16.5060312 0,5.5532687 C0,3.6256475 0.275016376,1.76225982 0.787952595,0.000202183179 L15.0195146,0.000599843416 C16.4267118,9.57435855 24.67483,16.923461 34.6394231,16.923461 Z" id="path-5"></path>
+        <linearGradient x1="29.2891231%" y1="40.3020339%" x2="87.7410752%" y2="71.6730605%" id="linearGradient-7">
+            <stop stop-color="#F9E97A" offset="0%"></stop>
+            <stop stop-color="#F1CD45" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="api" transform="translate(-350.000000, -42.000000)">
+            <g id="编组-13" transform="translate(-1.000000, -1.000000)">
+                <g id="logo" transform="translate(351.000000, 43.000000)">
+                    <polygon id="路径-29" fill="url(#linearGradient-1)" points="13.2211538 12.6926918 21.1538462 6.34653793 38.0769231 7.40423023 39.1346154 15.3369225 37.0192308 16.923461 19.5673077 16.923461"></polygon>
+                    <g id="形状结合备份-5" transform="translate(18.333333, 0.000384)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <use id="蒙版" fill="url(#linearGradient-2)" transform="translate(18.236631, 12.692399) scale(-1, -1) translate(-18.236631, -12.692399) " xlink:href="#path-3"></use>
+                    </g>
+                    <g id="形状结合备份-4">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <use id="蒙版" fill="#F1CD45" xlink:href="#path-5"></use>
+                        <path d="M45.6394231,9.59096685 C46.1373223,9.59096685 46.630936,9.57261846 47.119625,9.53656095 C43.5380319,14.6836603 37.5782993,18.0525053 30.8317308,18.0525053 C19.8789683,18.0525053 11,9.17353701 11,-1.77922546 C11,-3.70684665 11.2750164,-5.57023433 11.7879526,-7.33229197 L26.0195146,-7.33189431 C27.4267118,2.2418644 35.67483,9.59096685 45.6394231,9.59096685 Z" fill="url(#linearGradient-7)" mask="url(#mask-6)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

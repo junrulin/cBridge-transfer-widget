@@ -63,7 +63,7 @@ const RateModal = ({ onCancle }) => {
       fontWeight: 600,
       background: theme.primaryBrand,
       // color: theme.surfacePrimary,
-      color: "#FFFFFF",
+      color: "#ffffff",
       textAlign: "center",
       cursor: "pointer",
       height: 48,
@@ -253,7 +253,6 @@ const RateModal = ({ onCancle }) => {
                 onBlur={() => {
                   setInfo(num);
                 }}
-                style={Number(num) < minnum ? { borderColor: "#FF3D71" } : { borderColor: "#1890ff" }}
               />
               {((minnum < Number(num) && Number(num) < 0.1) || Number(num) > 5) && (
                 <div className={classes.warimg}>

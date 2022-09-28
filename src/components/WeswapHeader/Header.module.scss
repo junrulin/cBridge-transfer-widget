@@ -1,0 +1,185 @@
+$header_height: 110px;
+header.header {
+  min-width: 1220px;
+  height: var(--header-height);
+  padding: 0;
+  margin-bottom: -var(--header-height);
+  position: relative;
+  top: 0;
+  z-index: 999;
+  background-color: #F6F6FF;
+  color: #202020;
+  overflow-y: hidden;
+  font-family: PingfangSC, Red Hat Display, Roboto;
+  font-size: 16px;
+}
+
+div.main-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1220px;
+  height: 100%;
+  margin: auto;
+}
+
+.logo {
+  display: inline-block;
+  height: var(--header-height);
+  line-height: var(--header-height);
+}
+
+.icon-image {
+  display: inline-block;
+  width: 60px;
+  height: $header_height;
+  background-image: url('~./logo.img.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-text {
+  display: inline-block;
+  width: 150px;
+  height: $header_height;
+  background-image: url('~./logo.text.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title {
+  height: 100%;
+  margin: 0;
+  font-size: 0.24rem;
+  white-space: nowrap;
+}
+
+.menu {
+  display: inline-block;
+  height: 100%;
+  .button {
+    width: 91px;
+    height: 44px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    margin: 0 8px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all .3s;
+    color: #202020;
+    
+    &.active {
+      border-color: transparent;
+      background-color: #ffffff;
+      color: #6e6fe7;
+    }
+
+    &:hover {
+      border-color: transparent;
+      transform: scale(1.05);
+      background-color: #ffffff;
+    }
+  }
+}
+
+.right-menu {
+  height: 100%;
+}
+
+.app-name {
+  vertical-align: middle;
+  color: #202020;
+  white-space: nowrap;
+}
+
+.logo-icon {
+  display: inline-block;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+div.wallet-button-mobile {
+  width: auto;
+  height: 48px;
+  border-radius: 27.0;
+  box-shadow: none;
+  // position: absolute;
+  // top: 160px;
+  // right: 0;
+  z-index: 100;
+  background-image: none;
+  text-align: left;
+  color: #202020;
+  line-height: 48px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1);
+    box-shadow: none;
+  }
+}
+
+div.wallet-button-safepal {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.menu-item{
+  height: 48px;
+  line-height: 48px;
+  text-align: left;
+  color: #202020;
+  cursor: pointer;
+  font-size: 18px;
+
+  &:hover{
+    color: #6e6fe7;
+  }
+}
+
+.menu-item.active {
+  color: #6e6fe7;
+  cursor: not-allowed;
+}
+
+.sider-background {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent
+}
+
+.mobile-button {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 40px;
+  text-align: center;
+  margin-left: 12px;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #dedeff 0, #f6f6ff 200%);
+}
+
+@media screen and (max-width: 769px) {
+  $header_height: 48px;
+  .app-name {
+    width: 120px;
+  }
+  header.header{
+    height: $header_height;
+    line-height: $header_height;
+    margin-bottom: 0;
+  }
+  div.main-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+    height: $header_height;
+    background-color: #fafaff;
+  }
+}

@@ -136,7 +136,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     width: "100%",
     height: 48,
     borderRadius: 100,
-    border: "1px solid #4e4c4c",
+    border: `1px solid ${theme.primaryBrand}`,
     background: theme.secondBackground,
   },
 

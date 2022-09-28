@@ -55,6 +55,7 @@ const useStyles = createUseStyles((theme: Theme) => ({
     "&:hover": {
       background: theme.primaryBorder,
       transition: "ease 0.2s",
+      color: theme.primaryStress,
     },
   },
   activeItem: {

@@ -1,5 +1,5 @@
 {
-  "name": "cbridge-v2-web",
+  "name": "@weswap-fe/cBridge-weswap",
   "version": "0.0.1",
   "homepage": ".",
   "browserslist": {
@@ -18,7 +18,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
     "@celer-network/web3modal": "^1.9.5",
-    "@craco/craco": "^6.1.1",
+    "@craco/craco": "^6.4.5",
     "@improbable-eng/grpc-web": "^0.14.1",
     "@onflow/fcl": "^0.0.78",
     "@reduxjs/toolkit": "^1.5.1",
@@ -29,6 +29,7 @@
     "@types/google-protobuf": "^3.15.5",
     "@types/mathjs": "^9.4.2",
     "@walletconnect/web3-provider": "^1.7.0",
+    "@weswap-fe/common": "^0.1.0",
     "antd": "^4.16.13",
     "axios": "^0.21.1",
     "bnc-notify": "^1.5.0",
@@ -37,10 +38,12 @@
     "classnames": "^2.3.1",
     "copy-to-clipboard": "^3.3.1",
     "craco-less": "^1.17.1",
+    "craco-ts-loader": "^0.1.0",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "eslint-config-react-app": "^6.0.0",
-    "eth-hooks": "^1.1.2",
+    "eslint-plugin-jest": "^24.0.0",
+    "eth-hooks": "^4.5.1",
     "ethers": "^5.1.0",
     "google-protobuf": "^3.19.1",
     "grpc-web": "^1.3.0",
@@ -57,11 +60,11 @@
     "react-dom": "^17.0.2",
     "react-infinite-scroller": "^1.2.4",
     "react-jss": "^10.6.0",
-    "react-qr-reader": "^2.2.1",
+    "react-qr-reader": "^3.0.0-beta-1",
     "react-query": "^3.13.4",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
+    "react-script": "^2.0.5",
     "react-use": "^17.2.1",
     "redux-persist": "^6.0.0",
     "ts-protoc-gen": "^0.15.1-pre.a71b34e"
@@ -80,6 +83,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "chalk": "^4.1.0",
+    "craco-babel-loader": "^1.0.3",
     "dotenv-cli": "^4.0.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -92,7 +96,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.1.1",
     "gh-pages": "^3.1.0",
-    "husky": ">=6",
+    "html-webpack-plugin": "4.5.2",
+    "husky": "^8.0.1",
     "ipfs-http-client": "^49.0.4",
     "lint-staged": ">=10",
     "openapi-typescript": "^3.2.0",
@@ -100,7 +105,8 @@
     "s3-folder-upload": "^2.3.5",
     "surge": "^0.22.1",
     "typescript": "^4.2.3",
-    "vconsole": "^3.5.2"
+    "vconsole": "^3.5.2",
+    "webpack": "4.44.2"
   },
   "eslintConfig": {
     "extends": [
@@ -124,8 +130,7 @@
     "s3": "node ./scripts/s3.js",
     "flexible": "node ./scripts/flexible.js",
     "ship": "yarn surge",
-    "generate:api": "openapi-typescript -o src/api/api.ts $WEBAPI_PATH",
-    "prepare": "husky install"
+    "generate:api": "openapi-typescript -o src/api/api.ts $WEBAPI_PATH"
   },
   "lint-staged": {
     "*.{js,css,md,ts,tsx,less}": "prettier --write"
