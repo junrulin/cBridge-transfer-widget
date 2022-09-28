@@ -8,6 +8,7 @@ import { Theme } from "../theme/theme";
 import { alpha2Hex } from "../helpers/alpha2Hex";
 import { useWalletConnectionContext } from "../providers/WalletConnectionContextProvider";
 import { useNonEVMContext, isNonEVMChain, getNonEVMMode, NonEVMMode } from "../providers/NonEVMContextProvider";
+import IconWallet from '../images/wallet.svg';
 
 const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: Theme) => ({
   addressBtn: {
@@ -16,7 +17,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    background: props => (props.isMobile ? theme.primaryBackground : theme.secondBackground),
+    // background: props => (props.isMobile ? theme.primaryBackground : theme.secondBackground),
     transition: "none !important",
     backdropFilter: "blur(20px)",
     border: "none",
@@ -26,14 +27,18 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     padding: props => (props.isMobile ? "0px 8px" : ""),
     "& .ant-typography": {
       width: props => (props.isMobile ? 100 : 120),
-      color: theme.surfacePrimary,
+      // color: theme.surfacePrimary,
+      color: '#34D76C',
       "&:hover": {
         color: theme.unityWhite,
       },
     },
     "&:hover": {
-      background: theme.buttonHover,
-      color: theme.unityWhite,
+      filter: 'brightness(1.1)',
+      boxShadow: '5px 5px 50px 10px rgb(215 255 30 / 7%)',
+      backgroundColor: 'transparent',
+      // background: theme.buttonHover,
+      // color: theme.unityWhite,
       "& .ant-typography": {
         color: theme.unityWhite,
       },
@@ -50,20 +55,24 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
   connectBtn: {
     marginLeft: 8,
     height: 44,
-    background: theme.primaryBrand,
+    background: 'none' || theme.primaryBrand,
     backdropFilter: "blur(20px)",
     border: "none",
     borderRadius: 12,
     fontSize: 14,
     fontWeight: 700,
     lineHeight: "16px",
+    color: '#34D76C',
     "& .ant-typography": {
       width: 120,
       color: theme.surfacePrimary,
     },
     "&:hover": {
-      background: theme.buttonHover,
-      color: theme.unityWhite,
+      // background: theme.buttonHover,
+      // color: theme.unityWhite,
+      filter: 'brightness(1.1)',
+      boxShadow: '5px 5px 50px 10px rgb(215 255 30 / 7%)',
+      backgroundColor: 'transparent',
     },
     "&::before": {
       backgroundColor: `${theme.primaryBrand} !important`,
@@ -137,21 +146,30 @@ export default function Account(): JSX.Element {
     return (
       <Dropdown overlay={menu} trigger={["click", "hover"]}>
         <Button className={classes.addressBtn} type="ghost">
+          <img src={IconWallet} style={{verticalAlign:"text-bottom", marginRight:'7px'}} alt="wallet icon" />
           <Typography.Text ellipsis={{ suffix: walletAddress.slice(-4) }}>
             {walletAddress.substr(0, 6) + "..."}
           </Typography.Text>
-          <span className={classes.indicator} />
+          {/* <span className={classes.indicator} /> */}
         </Button>
       </Dropdown>
     );
   }
 
   if (isMobile) {
-    return <div />;
+    // return <div />;
+    
+    return (<>
+      <Button type="primary" className={classes.connectBtn} onClick={showWalletConnectionProviderModal}>
+        <img src={IconWallet} style={{verticalAlign:"text-bottom", marginRight:'7px'}} alt="wallet icon" />
+        {walletConnectionButtonTitle}
+      </Button>
+    </>)
   }
   return (
     <>
       <Button type="primary" className={classes.connectBtn} onClick={showWalletConnectionProviderModal}>
+        <img src={IconWallet} style={{verticalAlign:"text-bottom", marginRight:'7px'}} alt="wallet icon" />
         {walletConnectionButtonTitle}
       </Button>
     </>

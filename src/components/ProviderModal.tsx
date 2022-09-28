@@ -125,7 +125,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 16,
-    background: theme.primaryBrand,
+    background: theme.primaryBtn,
     color: theme.unityWhite,
     borderRadius: 16,
     border: "none",

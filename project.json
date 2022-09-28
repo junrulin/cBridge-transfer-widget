@@ -1,0 +1,5 @@
+{
+  "root": "packages/cBridge-brewery",
+  "sourceRoot": "packages/cBridge-brewery",
+  "projectType": "library"
+}

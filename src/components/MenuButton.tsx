@@ -19,7 +19,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
 
   connectBtn: {
     height: 40,
-    background: theme.primaryBrand,
+    background: theme.primaryBtn,
     backdropFilter: "blur(20px)",
     border: "none",
     borderRadius: 12,
@@ -30,7 +30,7 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
       background: theme.buttonHover,
     },
     "&::before": {
-      backgroundColor: `${theme.primaryBrand} !important`,
+      backgroundColor: `${theme.primaryBtn} !important`,
     },
   },
   dropDownMenu: {

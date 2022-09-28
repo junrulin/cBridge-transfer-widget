@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import { FC, useCallback, useEffect, useMemo, useState, useContext } from "react";
 import { Card, Button, Avatar, Tooltip, Modal } from "antd";
 import { createUseStyles } from "react-jss";
 import { useToggle, useNetworkState, useAsync } from "react-use";
@@ -99,6 +99,9 @@ import { getTokenBound } from "../redux/gateway";
 import { useIsWrapTokenTransferAtLimit, WrapTokenCaps } from "../hooks/useIsWrapTokenTransferAtLimit";
 import { isApeChain } from "../hooks/useTransfer";
 import { ApeTip } from "./nft/ApeTips";
+import cBrdige2Light from "../images/cBrdigeLight.svg";
+import cBrdige2Dark from "../images/cBrdigeDark.svg";
+import { ColorThemeContext } from "../providers/ThemeProvider";
 
 /* eslint-disable */
 /* eslint-disable camelcase */
@@ -201,13 +204,13 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     fontSize: 16,
     fontWeight: 700,
     borderRadius: 16,
-    background: theme.primaryBrand,
+    background: theme.primaryBtn,
     border: 0,
     "&:focus, &:hover": {
       background: theme.buttonHover,
     },
     "&::before": {
-      backgroundColor: `${theme.primaryBrand} !important`,
+      backgroundColor: `${theme.primaryBtn} !important`,
     },
   },
 
@@ -219,13 +222,14 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     fontSize: 16,
     fontWeight: 700,
     borderRadius: 16,
-    background: theme.primaryBrand,
+    background: theme.primaryBtn,
+    color: '#303030',
     border: 0,
     "&:focus, &:hover": {
       background: theme.buttonHover,
     },
     "&::before": {
-      backgroundColor: `${theme.primaryBrand} !important`,
+      backgroundColor: `${theme.primaryBtn} !important`,
     },
   },
   cont: {
@@ -238,14 +242,14 @@ const useStyles = createUseStyles<string, { isMobile: boolean }, Theme>((theme: 
     height: 55,
     fontSize: 16,
     borderRadius: 16,
-    background: theme.primaryBrand,
+    background: theme.primaryBtn,
     border: 0,
     fontWeight: 700,
     "&:focus, &:hover": {
       background: theme.buttonHover,
     },
     "&::before": {
-      backgroundColor: `${theme.primaryBrand} !important`,
+      backgroundColor: `${theme.primaryBtn} !important`,
     },
   },
   transitem: {},
@@ -2393,6 +2397,8 @@ const Transfer: FC = () => {
 
   const toChainEVMMode = getNonEVMMode(toChain?.id ?? 0);
   const disableForFlowReceiver = toChainEVMMode === NonEVMMode.flowMainnet || toChainEVMMode === NonEVMMode.flowTest;
+  const { themeType } = useContext(ColorThemeContext);
+  const biglogoUrl = themeType === "dark" ? cBrdige2Light : cBrdige2Dark;
 
   return (
     <div className={classes.flexCenter}>
@@ -2418,42 +2424,42 @@ const Transfer: FC = () => {
                     </div>
                   </div>
                 </div>
-                {(() => {
-                  if (pegConfig.mode !== PeggedChainMode.Off) {
-                    return null;
-                  }
-                  if (isMobile) {
-                    return (
-                      <div>
-                        <div
-                          onClick={e => {
-                            e.stopPropagation();
-                            handleOpenRateModal();
-                          }}
-                          style={{ cursor: "pointer", position: "relative" }}
-                        >
-                          <img src={settingIcon} className={classes.settingIcon} alt="setting icon" />
-                        </div>
-                        <Modal
-                          className={classes.mobileRateModal}
-                          title=""
-                          closable
-                          visible={showRateModal}
-                          onCancel={handleCloseRateModal}
-                          footer={null}
-                          centered
-                        >
-                          <RateModal
-                            onCancle={() => {
-                              handleCloseRateModal();
+                  {(() => {
+                    if (pegConfig.mode !== PeggedChainMode.Off) {
+                      return null;
+                    }
+                    if (isMobile) {
+                      return (
+                        <div>
+                          <div
+                            onClick={e => {
+                              e.stopPropagation();
+                              handleOpenRateModal();
                             }}
-                          />
-                        </Modal>
-                      </div>
-                    );
-                  }
-                  return renderCardSetting();
-                })()}
+                            style={{ cursor: "pointer", position: "relative" }}
+                          >
+                            <img src={settingIcon} className={classes.settingIcon} alt="setting icon" />
+                          </div>
+                          <Modal
+                            className={classes.mobileRateModal}
+                            title=""
+                            closable
+                            visible={showRateModal}
+                            onCancel={handleCloseRateModal}
+                            footer={null}
+                            centered
+                          >
+                            <RateModal
+                              onCancle={() => {
+                                handleCloseRateModal();
+                              }}
+                            />
+                          </Modal>
+                        </div>
+                      );
+                    }
+                    return renderCardSetting();
+                  })()}
               </div>
               <div className={classes.transcontent}>
                 <div className={classes.transnum}>
