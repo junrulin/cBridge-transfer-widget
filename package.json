@@ -20,6 +20,7 @@
     "@celer-network/web3modal": "^1.9.5",
     "@craco/craco": "^6.4.5",
     "@improbable-eng/grpc-web": "^0.14.1",
+    "@mui/material": "^5.13.0",
     "@onflow/fcl": "^0.0.78",
     "@reduxjs/toolkit": "^1.5.1",
     "@terra-money/amino-js": "^3.0.1",

@@ -1,0 +1,92 @@
+$height: 40px;
+$border-width: 1.5px;
+
+@mixin solid() {
+  background-image: linear-gradient(-34deg, #ffd06a 0%, #ffe174 100%);
+  color: #000000;
+  border-color: #ffd06a;
+}
+
+@mixin pointed() {
+  border-radius: 8px;
+}
+
+.button {
+  // default styles included
+  @include solid();
+  @include pointed();
+
+  box-sizing: content-box;
+  // unique
+  border: $border-width solid transparent;
+  height: $height;
+  line-height: $height;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    filter: brightness(1.05);
+    // transform: translate(1px, -1px);
+    box-shadow: 5px 5px 6px 3px #03030310;
+  }
+
+  &:active{
+    filter: brightness(0.95);
+    // transform: translate(-1px, 1px);
+    box-shadow: 5px 5px 6px 3px #03030310;
+    transform: scale(0.98);
+  }
+}
+
+.hollow {
+  background-color: transparent;
+  border-color: #a3a3a3;
+  color: #ffffff;
+  background-image: none;
+}
+
+.solid {
+  @include solid();
+}
+
+.round {
+  border-radius: $height / 2;
+}
+
+.pointed {
+  @include pointed();
+}
+
+.transparent {
+  background-image: none;
+  border-color: transparent;
+}
+
+.small {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 18px;
+}
+
+.disabled,
+.invalid {
+  background: #393743;
+  background-image: none;
+  color: #a7a9be;
+  cursor: not-allowed;
+  border-color: #393743;
+}
+
+.invalid {
+  cursor: initial;
+}
+
+.light {
+  background-image: linear-gradient(270deg, #faad14 0%, #f5222d 100%);
+  color: #fffffe;
+  border-color: transparent;
+}
